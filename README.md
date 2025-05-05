@@ -4,7 +4,7 @@
 ```json
 [
     {
-        "id": 2,
+        "id": 1,
         "name": "Чичкин Антон",
         "email": "chichkin2003@bk.ru",
         "phone": "88005553535",
@@ -13,7 +13,7 @@
         "updated_at": "2025-05-05T19:15:13.000000Z"
     },
     {
-        "id": 3,
+        "id": 2,
         "name": "Мокеев Алексей",
         "email": "ul.alexey.mokeev@gmail.com",
         "phone": "79969538332",
@@ -30,13 +30,13 @@
 [
     {
         "id": 1,
-        "user_id": 2,
+        "user_id": 1,
         "balance": "0.00",
         "blocked": false,
         "created_at": "2025-05-05T19:04:59.000000Z",
         "updated_at": "2025-05-05T19:04:59.000000Z",
         "user": {
-            "id": 2,
+            "id": 1,
             "name": "Чичкин Антон",
             "email": "chichkin2003@bk.ru",
             "phone": "88005553535",
@@ -47,13 +47,13 @@
     },
     {
         "id": 2,
-        "user_id": 3,
+        "user_id": 2,
         "balance": "0.00",
         "blocked": false,
         "created_at": "2025-05-05T19:16:08.000000Z",
         "updated_at": "2025-05-05T19:16:08.000000Z",
         "user": {
-            "id": 3,
+            "id": 2,
             "name": "Мокеев Алексей",
             "email": "ul.alexey.mokeev@gmail.com",
             "phone": "79969538332",
