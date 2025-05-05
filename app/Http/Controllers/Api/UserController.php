@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\BonusBalance;
 
 class UserController extends Controller
 {
@@ -22,6 +23,13 @@ class UserController extends Controller
         ]);
 
         $user = User::create($validated);
+        \Log::info('Создан пользователь с ID ' . $user->id);
+        $balance = BonusBalance::create([
+            'user_id' => $user->id,
+            'balance' => 0,
+            'blocked' => 0,
+        ]);
+        \Log::info('Создан баланс: ' . json_encode($balance));
 
         return response()->json($user, 201);
     }

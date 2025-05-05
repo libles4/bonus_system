@@ -41,7 +41,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->decimal('balance', 10, 2)->default(0);
             $table->boolean('blocked')->default(false);
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 
