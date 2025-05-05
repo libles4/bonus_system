@@ -3,22 +3,24 @@
 
 ```json
 [
-  {
-    "id": 1,
-    "name": "Alexey Mokeev",
-    "email": "ul.alexey.mokeev@gmail.com",
-    "phone": null,
-    "created_at": "2025-05-05T16:09:39.000000Z",
-    "updated_at": "2025-05-05T16:09:39.000000Z"
-  },
-  {
-    "id": 2,
-    "name": "Chichkin Anton",
-    "email": "chichkin2003@bk.ru",
-    "phone": null,
-    "created_at": "2025-05-05T16:11:37.000000Z",
-    "updated_at": "2025-05-05T16:11:37.000000Z"
-  }
+    {
+        "id": 2,
+        "name": "Чичкин Антон",
+        "email": "chichkin2003@bk.ru",
+        "phone": "88005553535",
+        "tg": "@Anton12357",
+        "created_at": "2025-05-05T19:04:59.000000Z",
+        "updated_at": "2025-05-05T19:15:13.000000Z"
+    },
+    {
+        "id": 3,
+        "name": "Мокеев Алексей",
+        "email": "ul.alexey.mokeev@gmail.com",
+        "phone": "79969538332",
+        "tg": "@lesh_4",
+        "created_at": "2025-05-05T19:16:08.000000Z",
+        "updated_at": "2025-05-05T19:17:01.000000Z"
+    }
 ]
 ```
 
@@ -26,37 +28,39 @@
 
 ```json
 [
-  {
-    "id": 1,
-    "user_id": 1,
-    "balance": "0.00",
-    "blocked": false,
-    "created_at": "2025-05-05T16:09:39.000000Z",
-    "updated_at": "2025-05-05T16:09:39.000000Z",
-    "user": {
-      "id": 1,
-      "name": "Alexey Mokeev",
-      "email": "ul.alexey.mokeev@gmail.com",
-      "phone": null,
-      "created_at": "2025-05-05T16:09:39.000000Z",
-      "updated_at": "2025-05-05T16:09:39.000000Z"
+    {
+        "id": 1,
+        "user_id": 2,
+        "balance": "0.00",
+        "blocked": false,
+        "created_at": "2025-05-05T19:04:59.000000Z",
+        "updated_at": "2025-05-05T19:04:59.000000Z",
+        "user": {
+            "id": 2,
+            "name": "Чичкин Антон",
+            "email": "chichkin2003@bk.ru",
+            "phone": "88005553535",
+            "tg": "@Anton12357",
+            "created_at": "2025-05-05T19:04:59.000000Z",
+            "updated_at": "2025-05-05T19:15:13.000000Z"
+        }
+    },
+    {
+        "id": 2,
+        "user_id": 3,
+        "balance": "0.00",
+        "blocked": false,
+        "created_at": "2025-05-05T19:16:08.000000Z",
+        "updated_at": "2025-05-05T19:16:08.000000Z",
+        "user": {
+            "id": 3,
+            "name": "Мокеев Алексей",
+            "email": "ul.alexey.mokeev@gmail.com",
+            "phone": "79969538332",
+            "tg": "@lesh_4",
+            "created_at": "2025-05-05T19:16:08.000000Z",
+            "updated_at": "2025-05-05T19:17:01.000000Z"
+        }
     }
-  },
-  {
-    "id": 2,
-    "user_id": 2,
-    "balance": "0.00",
-    "blocked": false,
-    "created_at": "2025-05-05T16:11:37.000000Z",
-    "updated_at": "2025-05-05T16:11:37.000000Z",
-    "user": {
-      "id": 2,
-      "name": "Chichkin Anton",
-      "email": "chichkin2003@bk.ru",
-      "phone": null,
-      "created_at": "2025-05-05T16:11:37.000000Z",
-      "updated_at": "2025-05-05T16:11:37.000000Z"
-    }
-  }
 ]
 ```
