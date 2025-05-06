@@ -64,7 +64,7 @@
     }
 ]
 ```
-### Пример ответа на GET /api/bonus_balances
+### Пример ответа на GET /api/bonus_types
 
 ```json
 [
