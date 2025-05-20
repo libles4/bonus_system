@@ -12,7 +12,7 @@ class User extends Authenticatable
 
     // Указываем, какие поля можно массово заполнять
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'phone', 'password', "tg", 
     ];
 
     // Указываем, какие поля должны быть скрыты при преобразовании в массив или JSON

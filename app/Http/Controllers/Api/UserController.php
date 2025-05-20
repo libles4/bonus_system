@@ -20,6 +20,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'phone' => 'nullable|string|max:20',
+            'tg' => 'sometimes|required|string|max:255',
         ]);
 
         $user = User::create($validated);
@@ -53,9 +54,10 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'sometimes|required|string|max:255',
             'email' => 'sometimes|required|email|unique:users,email,' . $id,
-            'phone' => 'nullable|string|max:20',
+            'phone' => 'nullable|string|max:20|unique:users,phone',
+            'tg' => 'sometimes|string|max:255',
         ]);
-
+        
         $user->update($validated);
 
         return response()->json($user);
