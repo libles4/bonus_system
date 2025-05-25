@@ -8,27 +8,52 @@ use Illuminate\Http\Request;
 
 class BonusTransactionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(BonusTransaction::with(['user', 'bonusType'])->get());
+        $query = BonusTransaction::with(['bonusType']);
+
+        if ($request->has('user_id')) {
+            $query->where('user_id', $request->user_id);
+        }
+
+        return response()->json($query->get());
     }
 
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'user_id' => 'required|exists:users,id',
-            'bonus_type_id' => 'required|exists:bonus_types,id',
-            'type' => 'required|in:accrual,spend,burn',
-            'amount' => 'required|numeric|min:0.01',
-            'reason' => 'nullable|string',
-            'expires_at' => 'nullable|date',
-            'status' => 'required|in:active,used,expired',
-        ]);
+    public function store(Request $request){
+    $validated = $request->validate([
+        'user_id' => 'required|exists:users,id',
+        'bonus_type_id' => 'required|exists:bonus_types,id',
+        'type' => 'required|in:accrual,spend,burn',
+        'amount' => 'required|numeric|min:0.01',
+        'reason' => 'nullable|string',
+        'expires_at' => 'nullable|date',
+        'status' => 'required|in:active,used,expired',
+    ]);
 
-        $transaction = BonusTransaction::create($validated);
+    // Создаем транзакцию
+    $transaction = BonusTransaction::create($validated);
 
-        return response()->json($transaction, 201);
+    // Обновляем баланс пользователя
+    $balance = \App\Models\BonusBalance::firstOrCreate(
+        ['user_id' => $validated['user_id']],
+        ['balance' => 0, 'blocked' => false]
+    );
+
+    if ($validated['type'] === 'accrual') {
+        $balance->balance += $validated['amount'];
+    } elseif ($validated['type'] === 'spend' || $validated['type'] === 'burn') {
+        $balance->balance -= $validated['amount'];
     }
+
+    // Не даем балансу уйти в минус
+    if ($balance->balance < 0) {
+        return response()->json(['error' => 'Недостаточно бонусов для списания'], 400);
+    }
+
+    $balance->save();
+
+    return response()->json($transaction, 201);
+}
 
     public function show($id)
     {
