@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 
 class BonusBalanceController extends Controller
 {
-public function index(Request $request)
-{
-    $query = BonusBalance::with('user');
+    public function index(Request $request)
+    {
+        $query = BonusBalance::with('user');
 
-    if ($request->has('user_id')) {
-        $query->where('user_id', $request->user_id);
+        if ($request->has('user_id')) {
+            $query->where('user_id', $request->user_id);
+        }
+
+        return response()->json($query->get());
     }
-
-    return response()->json($query->get());
-}
 
     public function show($id)
     {

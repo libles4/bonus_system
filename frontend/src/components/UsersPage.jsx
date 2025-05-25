@@ -17,7 +17,7 @@ function UsersPage() {
         textAlign: 'left',
       }}
     >
-      <div style={{ flex: 1, borderRight: '1px solid #ccc', borderLeft: '5px solid #ccc', paddingLeft: '20px' }}>
+      <div style={{ flex: 1, borderRight: '1px solid #ccc', borderLeft: '5px solid #ccc', paddingLeft: '20px', paddingRight: '20px' }}>
         <UserList />
       </div>
 

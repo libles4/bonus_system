@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 
 function UserDetail() {
   const { id } = useParams()
@@ -22,16 +22,25 @@ function UserDetail() {
 
   return (
     <div>
-      <h3>{user.name}</h3>
+      <h3>Информация о пользователе</h3>
+
+      <h4>{user.name}</h4>
       <p>ID: {user.id}</p>
       <p>Email: {user.email}</p>
       <p>Phone: {user.phone}</p>
       <p>TG: {user.tg}</p>
+      <div style={{ marginBottom: '16px' }}>
+        <Link to="" style={{ display: 'block' }}>
+          <button style={{ width: '100%' }}>Изменить данные</button>
+        </Link>
+      </div>
       {balance ? (
         <h3>Бонусов на балансе: {balance.balance}</h3>
       ) : (
         <p>Баланс не найден</p>
       )}
+
+
     </div>
   )
 }
