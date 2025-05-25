@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/ee2b88c7-2eae-4907-875b-2bc00e449225)
 ## Бонусная система на Laravel
 ### Пример ответа на GET /api/users
 
