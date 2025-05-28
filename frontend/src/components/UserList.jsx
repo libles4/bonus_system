@@ -29,7 +29,7 @@ function UserList() {
     <div>
       <h3>Список пользователей</h3>
       <div style={{ marginBottom: '16px' }}>
-        <Link to="/users/create" style={{ display: 'block' }}>
+        <Link to="/users/new" style={{ display: 'block' }}>
           <button style={{ width: '100%' }}>Создать пользователя</button>
         </Link>
       </div>

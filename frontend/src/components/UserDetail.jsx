@@ -40,8 +40,17 @@ function UserDetail() {
         <p>Баланс не найден</p>
       )}
 
-
+      
+      <div style={{ marginTop: '20px' }}>
+        <Link to={`/users/${user.id}/add-bonus`} style={{ display: 'block' }}>
+          <button style={{ width: '100%' }}>Начислить бонусы</button>
+        </Link>
+      </div>
+        <Link to={`/users/${user.id}/spend-bonus`} style={{ display: 'block' }}>
+          <button style={{ width: '100%', marginTop: '10px' }}>Списать бонусы</button>
+        </Link>
     </div>
+    
   )
 }
 

@@ -28,7 +28,7 @@ function Transactions() {
         {transactions.map(transaction => (
         <li key={transaction.id} style={{ marginBottom: '8px' }}>
             <b>{new Date(transaction.created_at).toLocaleDateString('ru-RU')} ({new Date(transaction.created_at).toLocaleTimeString('ru-RU')})</b> 
-            {transaction.type === "accrual" ? ("+") : ("-")} {transaction.amount} {transaction.bonus_type?.name}
+            <b>{transaction.type === "accrual" ? (" +") : (" -")}{transaction.amount}</b> {transaction.bonus_type?.name}
         </li>))}
       </ul>
     ) : (
