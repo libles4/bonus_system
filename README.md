@@ -118,3 +118,17 @@
     }
 ]
 ```
+Добавлена панель администрирования для:
+- управления пользователями;
+- начисления и списания бонусов;
+- просмотра истории транзакций по бонусам (начисления и списания).
+![image](https://github.com/user-attachments/assets/a239c402-22d5-4e9c-916c-c557d7db4844)
+![image](https://github.com/user-attachments/assets/fcd8deec-7ce0-487e-9c46-193874725bc7)
+![image](https://github.com/user-attachments/assets/934e9195-7ab3-459a-bc0a-616fef851277)
+![image](https://github.com/user-attachments/assets/5f1cdf75-f03b-4a63-b630-7ad17632a5e8)
+![image](https://github.com/user-attachments/assets/7a54fe1e-61d8-4185-aabf-2f012b133beb)
+
+
+
+
+
